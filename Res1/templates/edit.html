@@ -1,0 +1,6 @@
+<form action="" method="POST">
+    {% csrf_token %}
+    Resname: <input type="text" name="resname" id="" value="{{hotels.resname}}">
+    Reslink: <input type="text" name="reslink" value="{{hotels.reslink}}">
+    <input type="submit" value="Edit">
+</form>

@@ -1,0 +1,7 @@
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    Food Item : <input type="file" name="image" id="" value="{{foods.file}}"><br> <br>
+    desc: <input type="text" name="desc" value="{{foods.desc}}">
+    <input type="submit" value="Edit Food">
+</form>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <head>
+        <style>
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            li {
+                display: inline;
+            }
+        </style>
+    </head>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="{% url 'signup' %}">Register</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="#about">Logout</a></li>
+    </ul>
+
+<br><br>
+
+
+
+    <ul>
+        <table border="1">
+            {% for x in hotels %}
+            <tr>
+                <th><a href="{{x.reslink}}">{{x.resname}}</a></th>
+                <th><a href="{% url 'edithotel' x.id %}">Update</a></th>
+                <th><a href="{% url 'deletehotel' x.id %}">Delete</a></th>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <form action="" method="POST">
+            {% csrf_token %}
+            Resname: <input type="text" name="resname" id="">
+            Reslink: <input type="text" name="reslink">
+            <input type="submit" value="Create">
+        </form>
+
+</body>
+
+</html>
